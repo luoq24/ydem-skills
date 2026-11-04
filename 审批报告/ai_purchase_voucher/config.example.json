@@ -1,0 +1,28 @@
+{
+  "product": "chatgpt-pro",
+  "title": "OpenAI-ChatGPT-Pro",
+  "subtitle": "单页 A4",
+  "requirement": "提交要求：一份 PDF、仅一页；需含 ① 付款凭证（账单 / 扣款记录）② 订单或发票 ③ 订阅或订单记录",
+  "footer": "本凭据根据实际付款与订阅记录整理，仅用于报销审批；原始账单、发票与订阅记录由报销人留存备查。",
+  "sections": {
+    "payment": {
+      "image": "images/payment.png",
+      "label": "① 付款凭证（账单 / 扣款记录）",
+      "fit": "cover",
+      "position": "top center"
+    },
+    "invoice": {
+      "image": "images/invoice.png",
+      "label": "② 发票 / Receipt",
+      "fit": "cover",
+      "position": "top center"
+    },
+    "subscription": {
+      "image": "images/subscription.png",
+      "label": "③ 订阅 / 订单记录 · 账单",
+      "fit": "cover",
+      "position": "top center"
+    }
+  },
+  "output": "OpenAI-ChatGPT-Pro-报销凭据.pdf"
+}
