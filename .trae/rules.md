@@ -19,3 +19,5 @@
 1. **禁止擅自安装 Python 库** - 缺少库时提醒用户手动安装
 2. **不要使用系统 Python** - 使用环境默认的 python 命令
 3. **禁止在 Skill 目录中使用 `__init__.py`** - 直接导入 `scripts` 下的模块
+4. **禁止在导入中包含上层分类目录名** - 使用相对导入或直接从模块导入，如 `from scripts.excel_reader import read_excel`
+5. **不要使用 openpyxl 处理 Excel** - 优先使用 xlwings 库
