@@ -31,6 +31,12 @@
 
 脚本不会自动安装依赖。缺少 `ffmpeg` 时请先安装 ffmpeg 并确认命令行能执行 `ffmpeg -version`。
 
+## 临时文件约定
+
+预览图、调试帧、中间产物等临时文件，一律输出到工作区根目录 `_temp/`，不要写入 skill 目录或其 `scripts/` 目录。
+
+从本 skill 目录执行时，工作区根目录的相对路径为 `../../_temp/`。`_temp/` 已加入 `.gitignore`，不会进入版本库。
+
 ## 使用方法
 
 以下命令均在 `视频处理/game_view_cropper/` 目录下执行。
@@ -50,7 +56,7 @@ recording.mp4  ->  recording_game.mp4
 ### 2. 先看检测结果，不生成视频
 
 ```bash
-python scripts/crop_game_view.py recording.mp4 --dry-run --preview preview.png
+python scripts/crop_game_view.py recording.mp4 --dry-run --preview ../../_temp/game_view_preview.png
 ```
 
 `--preview` 会在检测所用的画面帧上画出红色裁切框，便于确认区域是否准确。若游戏画面在录屏中途才出现，预览帧会自动取动态最明显的一帧，而不是黑屏或纯色帧。
@@ -62,7 +68,7 @@ python scripts/crop_game_view.py recording.mp4 --dry-run --preview preview.png
 检测帧: 0.000s
 裁切区域: x=320, y=120, w=1280, h=720 (1280x720)
 检测方式: auto(spatial+activity)，置信度: medium
-预览图: ...\preview.png
+预览图: ...\_temp\game_view_preview.png
 ```
 
 ### 3. 指定输出路径
@@ -93,7 +99,7 @@ python scripts/crop_game_view.py recording.mp4 --crop 320:120:1280:720
 | `--scan-seconds` | `20` | 扫描开头的秒数，用于跳过黑屏和纯色帧 |
 | `--sample-fps` | `2` | 检测时每秒抽取的帧数 |
 | `--padding` | `0` | 检测区域四周额外保留的像素 |
-| `--preview FILE` | 无 | 输出带红色裁切框的预览图 |
+| `--preview FILE` | 无 | 输出带红色裁切框的预览图；请输出到工作区根目录 `_temp/` |
 | `--dry-run` | 关 | 只检测并打印结果，不生成视频 |
 | `--json` | 关 | 以 JSON 输出检测结果，便于程序读取 |
 | `--crf` | `18` | x264 质量，越小质量越高 |
@@ -159,7 +165,7 @@ result = detect_game_region("recording.mp4")
 make_preview(
     result.info,
     result.region,
-    "preview.png",
+    "../../_temp/game_view_preview.png",
     frame_time=result.frame_time,
 )
 ```
@@ -173,7 +179,7 @@ make_preview(
 
 ## 注意事项
 
-1. **先预览再批量处理**：不同编辑器布局差异较大，首次使用建议加 `--dry-run --preview` 检查红色框。
+1. **先预览再批量处理**：不同编辑器布局差异较大，首次使用建议加 `--dry-run --preview ../../_temp/game_view_preview.png` 检查红色框。
 2. **黑屏开头**：默认只扫描前 20 秒。若游戏画面出现得更晚，请增大 `--scan-seconds`。
 3. **静态画面**：`--method activity` 对静止画面无效；改用 `auto` 或 `spatial`。
 4. **区域不准时**：用预览图读出实际坐标，并通过 `--crop X:Y:W:H` 手动指定，结果最稳定。

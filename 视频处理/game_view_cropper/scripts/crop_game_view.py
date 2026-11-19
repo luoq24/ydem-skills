@@ -2,7 +2,7 @@
 
 示例：
     python scripts/crop_game_view.py recording.mp4
-    python scripts/crop_game_view.py recording.mp4 --preview preview.png --dry-run
+    python scripts/crop_game_view.py recording.mp4 --preview ../../_temp/game_view_preview.png --dry-run
     python scripts/crop_game_view.py recording.mp4 --crop 320:120:1280:720
 """
 
@@ -58,7 +58,7 @@ def build_parser() -> argparse.ArgumentParser:
         default=0,
         help="在检测区域四周额外保留的像素数",
     )
-    parser.add_argument("--preview", help="输出一张画有红色裁切框的预览图")
+    parser.add_argument("--preview", help="输出一张画有红色裁切框的预览图；临时预览图请输出到工作区根目录 _temp/")
     parser.add_argument("--dry-run", action="store_true", help="只检测并打印结果，不生成视频")
     parser.add_argument("--json", action="store_true", help="以 JSON 格式打印检测结果")
     parser.add_argument("--crf", type=int, default=18, help="x264 视频质量，数值越小质量越高")

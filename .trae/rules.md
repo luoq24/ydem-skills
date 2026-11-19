@@ -14,6 +14,10 @@
    - 使用 `python` 命令
    - 不指定 Python 绝对路径
 
+4. **临时文件**
+   - 预览图、调试输出、中间产物等临时文件统一放在工作区根目录 `_temp/`
+   - 不得写入 Skill 目录；`_temp/` 已在 `.gitignore` 中忽略
+
 ## 不能做
 
 1. **禁止擅自安装 Python 库** - 缺少库时提醒用户手动安装
@@ -21,3 +25,4 @@
 3. **禁止在 Skill 目录中使用 `__init__.py`** - 直接导入 `scripts` 下的模块
 4. **禁止在导入中包含上层分类目录名** - 使用相对导入或直接从模块导入，如 `from scripts.excel_reader import read_excel`
 5. **不要使用 openpyxl 处理 Excel** - 优先使用 xlwings 库
+6. **禁止在 Skill 目录中生成临时文件** - 预览图、缓存、调试帧等一律放到根目录 `_temp/`

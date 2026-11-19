@@ -206,3 +206,39 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 output/
+战斗研发协作讨论会-独立版/index.html
+战斗研发协作讨论会-独立版/videos/01-compare.mp4
+战斗研发协作讨论会-独立版/videos/02-multi-battle.mp4
+战斗研发协作讨论会-独立版/videos/03-dualview.mp4
+.gitignore
+战斗策划逆向进度v2/index.html
+战斗策划逆向进度v2/videos/01-compare.mp4
+战斗策划逆向进度v2/videos/02-multi-battle.mp4
+战斗策划逆向进度v2/videos/03-dualview.mp4
+战斗研发协作讨论会/1015录像与当前Unity对拍-v13.mp4
+战斗研发协作讨论会/战斗研发协作讨论会-网页版.html
+战斗研发协作讨论会/战斗研发协作讨论会.html
+战斗研发协作讨论会/Desktop 2026.11.13 - 14.39.28.08_game_前30秒.mp4
+战斗研发协作讨论会/dualview-side-by-side-2026-11-16T10-28-31-593Z.mp4
+战斗研发协作讨论会/_shared/base.css
+战斗研发协作讨论会/_shared/chart.umd.min.js
+战斗研发协作讨论会/_shared/decorations.css
+战斗研发协作讨论会/_shared/echarts-theme-sync.js
+战斗研发协作讨论会/_shared/echarts.min.js
+战斗研发协作讨论会/_shared/fonts.css
+战斗研发协作讨论会/_shared/runtime.js
+战斗研发协作讨论会/_shared/animations/animations.css
+战斗研发协作讨论会/_shared/animations/fx-runtime.js
+战斗研发协作讨论会/_shared/hljs/hljs-core.min.js
+战斗研发协作讨论会/_shared/hljs/hljs-javascript.min.js
+战斗研发协作讨论会/_shared/hljs/hljs-tokyo-night-dark.min.css
+战斗研发协作讨论会/_shared/themes/aurora.css
+战斗研发协作讨论会/_shared/themes/blueprint.css
+战斗研发协作讨论会/_shared/themes/catppuccin-latte.css
+战斗研发协作讨论会/_shared/themes/tokyo-night.css
+
+# 临时文件（预览图、调试输出、中间产物）
+_temp/
+
+# Trae 打开/分享 HTML 时自动生成的打包缓存
+.trae-html-share-packages/
